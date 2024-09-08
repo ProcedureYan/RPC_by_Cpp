@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/provider.dir/friendservice.cc.o CMakeFiles/provider.dir/__/friend.pb.cc.o  -o ../../../bin/provider   -L/home/rpc_project/Rpc_Project/lib  -Wl,-rpath,/home/rpc_project/Rpc_Project/lib ../../../lib/libmprpc.so -lprotobuf 

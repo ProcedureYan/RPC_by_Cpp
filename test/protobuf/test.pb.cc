@@ -85,8 +85,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_test_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\ntest.proto\022\006fixbug\")\n\014LoginRequest\022\014\n\004"
-  "name\030\001 \001(\t\022\013\n\003pwd\030\002 \001(\t\"A\n\rLoginResponse"
-  "\022\017\n\007errcode\030\001 \001(\005\022\016\n\006errmsg\030\002 \001(\t\022\017\n\007suc"
+  "name\030\001 \001(\014\022\013\n\003pwd\030\002 \001(\014\"A\n\rLoginResponse"
+  "\022\017\n\007errcode\030\001 \001(\005\022\016\n\006errmsg\030\002 \001(\014\022\017\n\007suc"
   "cess\030\003 \001(\010b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_test_2eproto_deps[1] = {
@@ -179,21 +179,19 @@ const char* LoginRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string name = 1;
+      // bytes name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "fixbug.LoginRequest.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string pwd = 2;
+      // bytes pwd = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_pwd();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "fixbug.LoginRequest.pwd"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -223,23 +221,15 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1;
+  // bytes name = 1;
   if (this->name().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "fixbug.LoginRequest.name");
-    target = stream->WriteStringMaybeAliased(
+    target = stream->WriteBytesMaybeAliased(
         1, this->_internal_name(), target);
   }
 
-  // string pwd = 2;
+  // bytes pwd = 2;
   if (this->pwd().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_pwd().data(), static_cast<int>(this->_internal_pwd().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "fixbug.LoginRequest.pwd");
-    target = stream->WriteStringMaybeAliased(
+    target = stream->WriteBytesMaybeAliased(
         2, this->_internal_pwd(), target);
   }
 
@@ -259,17 +249,17 @@ size_t LoginRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string name = 1;
+  // bytes name = 1;
   if (this->name().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_name());
   }
 
-  // string pwd = 2;
+  // bytes pwd = 2;
   if (this->pwd().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_pwd());
   }
 
@@ -426,12 +416,11 @@ const char* LoginResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string errmsg = 2;
+      // bytes errmsg = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_errmsg();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "fixbug.LoginResponse.errmsg"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -474,13 +463,9 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_errcode(), target);
   }
 
-  // string errmsg = 2;
+  // bytes errmsg = 2;
   if (this->errmsg().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_errmsg().data(), static_cast<int>(this->_internal_errmsg().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "fixbug.LoginResponse.errmsg");
-    target = stream->WriteStringMaybeAliased(
+    target = stream->WriteBytesMaybeAliased(
         2, this->_internal_errmsg(), target);
   }
 
@@ -506,10 +491,10 @@ size_t LoginResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string errmsg = 2;
+  // bytes errmsg = 2;
   if (this->errmsg().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_errmsg());
   }
 

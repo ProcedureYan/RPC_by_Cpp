@@ -179,13 +179,13 @@ class LoginRequest :
     kNameFieldNumber = 1,
     kPwdFieldNumber = 2,
   };
-  // string name = 1;
+  // bytes name = 1;
   void clear_name();
   const std::string& name() const;
   void set_name(const std::string& value);
   void set_name(std::string&& value);
   void set_name(const char* value);
-  void set_name(const char* value, size_t size);
+  void set_name(const void* value, size_t size);
   std::string* mutable_name();
   std::string* release_name();
   void set_allocated_name(std::string* name);
@@ -195,13 +195,13 @@ class LoginRequest :
   std::string* _internal_mutable_name();
   public:
 
-  // string pwd = 2;
+  // bytes pwd = 2;
   void clear_pwd();
   const std::string& pwd() const;
   void set_pwd(const std::string& value);
   void set_pwd(std::string&& value);
   void set_pwd(const char* value);
-  void set_pwd(const char* value, size_t size);
+  void set_pwd(const void* value, size_t size);
   std::string* mutable_pwd();
   std::string* release_pwd();
   void set_allocated_pwd(std::string* pwd);
@@ -333,13 +333,13 @@ class LoginResponse :
     kErrcodeFieldNumber = 1,
     kSuccessFieldNumber = 3,
   };
-  // string errmsg = 2;
+  // bytes errmsg = 2;
   void clear_errmsg();
   const std::string& errmsg() const;
   void set_errmsg(const std::string& value);
   void set_errmsg(std::string&& value);
   void set_errmsg(const char* value);
-  void set_errmsg(const char* value, size_t size);
+  void set_errmsg(const void* value, size_t size);
   std::string* mutable_errmsg();
   std::string* release_errmsg();
   void set_allocated_errmsg(std::string* errmsg);
@@ -389,7 +389,7 @@ class LoginResponse :
 #endif  // __GNUC__
 // LoginRequest
 
-// string name = 1;
+// bytes name = 1;
 inline void LoginRequest::clear_name() {
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -424,7 +424,7 @@ inline void LoginRequest::set_name(const char* value) {
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:fixbug.LoginRequest.name)
 }
-inline void LoginRequest::set_name(const char* value, size_t size) {
+inline void LoginRequest::set_name(const void* value, size_t size) {
   
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
@@ -449,7 +449,7 @@ inline void LoginRequest::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:fixbug.LoginRequest.name)
 }
 
-// string pwd = 2;
+// bytes pwd = 2;
 inline void LoginRequest::clear_pwd() {
   pwd_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -484,7 +484,7 @@ inline void LoginRequest::set_pwd(const char* value) {
   pwd_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:fixbug.LoginRequest.pwd)
 }
-inline void LoginRequest::set_pwd(const char* value, size_t size) {
+inline void LoginRequest::set_pwd(const void* value, size_t size) {
   
   pwd_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
@@ -533,7 +533,7 @@ inline void LoginResponse::set_errcode(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:fixbug.LoginResponse.errcode)
 }
 
-// string errmsg = 2;
+// bytes errmsg = 2;
 inline void LoginResponse::clear_errmsg() {
   errmsg_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -568,7 +568,7 @@ inline void LoginResponse::set_errmsg(const char* value) {
   errmsg_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:fixbug.LoginResponse.errmsg)
 }
-inline void LoginResponse::set_errmsg(const char* value, size_t size) {
+inline void LoginResponse::set_errmsg(const void* value, size_t size) {
   
   errmsg_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
